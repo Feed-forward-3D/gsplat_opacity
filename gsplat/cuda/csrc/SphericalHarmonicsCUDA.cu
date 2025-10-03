@@ -177,15 +177,15 @@ __device__ void sh_coeffs_to_color_fast_vjp(
         fC1_y = -2.f * x;
         fS1_x = 2.f * x;
         fS1_y = 2.f * z;
-        pSH6_z = 2.f * 0.9461746957575601f * y;
-        pSH7_x = fTmp0B;
-        pSH7_z = fTmp0B_z * z;
-        pSH5_y = fTmp0B;
-        pSH5_z = fTmp0B_z * x;
-        pSH8_x = 0.5462742152960395f * fC1_x;
-        pSH8_y = 0.5462742152960395f * fC1_y;
-        pSH4_x = 0.5462742152960395f * fS1_x;
-        pSH4_y = 0.5462742152960395f * fS1_y;
+        pSH6_z = 2.f * 0.9461746957575601f * y; // clear
+        pSH7_x = fTmp0B; // clear
+        pSH7_z = fTmp0B_z * z; // clear
+        pSH5_y = fTmp0B; // clear
+        pSH5_z = fTmp0B_z * x; // clear
+        pSH8_x = 0.5462742152960395f * fC1_x; // clear
+        pSH8_y = 0.5462742152960395f * fC1_y; // clear
+        pSH4_x = 0.5462742152960395f * fS1_x; // clear
+        pSH4_y = 0.5462742152960395f * fS1_y; // clear
 
         v_z += v_colors_local *
                (pSH4_x * coeffs[4 * 3 + c] + pSH8_x * coeffs[8 * 3 + c] +
@@ -215,7 +215,7 @@ __device__ void sh_coeffs_to_color_fast_vjp(
     float fTmp1B = 1.445305721320277f * y;
     float fC2 = z * fC1 - x * fS1;
     float fS2 = z * fS1 + x * fC1;
-    float pSH12 = z * (1.865881662950577f * y2 - 1.119528997770346f);
+    float pSH12 = y * (1.865881662950577f * y2 - 1.119528997770346f);
     float pSH13 = fTmp0C * z;
     float pSH11 = fTmp0C * x;
     float pSH14 = fTmp1B * fC1;
@@ -241,20 +241,20 @@ __device__ void sh_coeffs_to_color_fast_vjp(
         fS2_x = fS1 + z * fS1_x + x * fC1_x;
         fS2_y = z * fS1_y + fC1 + x * fC1_y;
         pSH12_z = 3.f * 1.865881662950577f * y2 - 1.119528997770346f;
-        pSH13_x = fTmp0C;
-        pSH13_z = fTmp0C_z * z;
-        pSH11_y = fTmp0C;
-        pSH11_z = fTmp0C_z * x;
-        pSH14_x = fTmp1B * fC1_x;
-        pSH14_y = fTmp1B * fC1_y;
-        pSH14_z = fTmp1B_z * fC1;
-        pSH10_x = fTmp1B * fS1_x;
-        pSH10_y = fTmp1B * fS1_y;
-        pSH10_z = fTmp1B_z * fS1;
-        pSH15_x = -0.5900435899266435f * fC2_x;
-        pSH15_y = -0.5900435899266435f * fC2_y;
-        pSH9_x = -0.5900435899266435f * fS2_x;
-        pSH9_y = -0.5900435899266435f * fS2_y;
+        pSH13_x = fTmp0C; // clear
+        pSH13_z = fTmp0C_z * z; // clear
+        pSH11_y = fTmp0C; // clear
+        pSH11_z = fTmp0C_z * x; // clear
+        pSH14_x = fTmp1B * fC1_x; // clear
+        pSH14_y = fTmp1B * fC1_y; // clear
+        pSH14_z = fTmp1B_z * fC1; // clear
+        pSH10_x = fTmp1B * fS1_x; // clear
+        pSH10_y = fTmp1B * fS1_y; // clear
+        pSH10_z = fTmp1B_z * fS1; // clear
+        pSH15_x = -0.5900435899266435f * fC2_x; // clear
+        pSH15_y = -0.5900435899266435f * fC2_y; // clear
+        pSH9_x = -0.5900435899266435f * fS2_x; // clear
+        pSH9_y = -0.5900435899266435f * fS2_y; // clear
 
         v_z += v_colors_local *
                (pSH9_x * coeffs[9 * 3 + c] + pSH15_x * coeffs[15 * 3 + c] +
